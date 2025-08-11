@@ -1,0 +1,516 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Qasim",
+      "email": "qasim@gmail.com",
+      "role": "regular",
+      "created_at": "2025-08-07T19:44:00Z"
+    },
+    {
+      "id": 2,
+      "name": "Ali",
+      "email": "ali@gmail.com",
+      "role": "regular",
+      "created_at": "2025-08-07T19:47:00Z"
+    },
+    {
+      "id": 3,
+      "name": "Arsalan",
+      "email": "arsalan@gmail.com",
+      "role": "admin",
+      "created_at": "2025-08-08T07:28:17Z"
+    },
+    {
+      "id": 4,
+      "name": "Suham",
+      "email": "suham@gmail.com",
+      "role": "regular",
+      "created_at": "2025-08-08T08:01:37Z"
+    },
+    {
+      "id": 5,
+      "name": "Iqbal",
+      "email": "iqbal@gmail.com",
+      "role": "regular",
+      "created_at": "2025-08-08T08:02:26Z"
+    },
+    {
+      "id": 6,
+      "name": "Khan",
+      "email": "khan@gmail.com",
+      "role": "regular",
+      "created_at": "2025-08-08T10:06:44Z"
+    },
+    {
+      "id": 7,
+      "name": "Uzair",
+      "email": "uzair@gmail.com",
+      "role": "regular",
+      "created_at": "2025-08-08T10:29:44Z"
+    },
+    {
+      "id": 8,
+      "name": "Kashif",
+      "email": "kashif@gmail.com",
+      "role": "regular",
+      "created_at": "2025-08-11T05:07:15Z"
+    }
+  ],
+  "leads": [
+    {
+      "id": 1,
+      "name": "Ali Ahmed",
+      "contact": "ali@techcorp.com",
+      "phone": "+1-555-0123",
+      "source": "website",
+      "status": "new",
+      "owner_id": 2,
+      "value": 50000,
+      "created_at": "2024-01-15T10:30:00Z",
+      "updated_at": "2024-01-15T10:30:00Z"
+    },
+    {
+      "id": 2,
+      "name": "Maria Garcia",
+      "contact": "maria@innovate.com",
+      "phone": "+1-555-0124",
+      "source": "referral",
+      "status": "contacted",
+      "owner_id": 1,
+      "value": 75000,
+      "created_at": "2024-01-14T14:20:00Z",
+      "updated_at": "2024-01-16T09:15:00Z"
+    },
+    {
+      "id": 3,
+      "name": "David Chen",
+      "contact": "david@startup.com",
+      "phone": "+1-555-0125",
+      "source": "cold_call",
+      "status": "converted",
+      "owner_id": 3,
+      "value": 120000,
+      "created_at": "2024-01-13T16:45:00Z",
+      "updated_at": "2024-01-17T11:30:00Z"
+    },
+    {
+      "id": 4,
+      "name": "Lisa Brown",
+      "contact": "lisa@enterprise.com",
+      "phone": "+1-555-0126",
+      "source": "website",
+      "status": "new",
+      "owner_id": 2,
+      "value": 90000,
+      "created_at": "2024-01-18T08:20:00Z",
+      "updated_at": "2024-01-18T08:20:00Z"
+    },
+    {
+      "id": 5,
+      "name": "Robert Taylor",
+      "contact": "robert@consulting.com",
+      "phone": "+1-555-0127",
+      "source": "referral",
+      "status": "new",
+      "owner_id": 1,
+      "value": 65000,
+      "created_at": "2024-01-19T13:10:00Z",
+      "updated_at": "2024-01-19T13:10:00Z"
+    },
+    {
+      "id": 6,
+      "name": "Emma Wilson",
+      "contact": "emma@techstartup.com",
+      "phone": "+1-555-0128",
+      "source": "website",
+      "status": "contacted",
+      "owner_id": 4,
+      "value": 85000,
+      "created_at": "2024-01-20T09:45:00Z",
+      "updated_at": "2024-01-21T14:30:00Z"
+    },
+    {
+      "id": 7,
+      "name": "James Anderson",
+      "contact": "james@finance.com",
+      "phone": "+1-555-0129",
+      "source": "cold_call",
+      "status": "lost",
+      "owner_id": 5,
+      "value": 45000,
+      "created_at": "2024-01-12T11:20:00Z",
+      "updated_at": "2024-01-22T16:45:00Z"
+    }
+  ],
+  "deals": [
+    {
+      "id": 1,
+      "title": "Enterprise Software License",
+      "lead_id": 3,
+      "value": 120000,
+      "stage": "closed_won",
+      "owner_id": 3,
+      "created_at": "2024-01-13T16:45:00Z",
+      "closed_at": "2024-01-17T11:30:00Z"
+    },
+    {
+      "id": 2,
+      "title": "Consulting Services Package",
+      "lead_id": 2,
+      "value": 75000,
+      "stage": "negotiation",
+      "owner_id": 1,
+      "created_at": "2024-01-14T14:20:00Z",
+      "closed_at": null
+    },
+    {
+      "id": 3,
+      "title": "SaaS Subscription",
+      "lead_id": null,
+      "value": 45000,
+      "stage": "proposal",
+      "owner_id": 2,
+      "created_at": "2024-01-16T09:00:00Z",
+      "closed_at": null
+    },
+    {
+      "id": 4,
+      "title": "Custom Development Project",
+      "lead_id": null,
+      "value": 180000,
+      "stage": "proposal",
+      "owner_id": 1,
+      "created_at": "2024-01-17T15:30:00Z",
+      "closed_at": null
+    },
+    {
+      "id": 5,
+      "title": "Training and Support",
+      "lead_id": null,
+      "value": 35000,
+      "stage": "closed_lost",
+      "owner_id": 3,
+      "created_at": "2024-01-10T12:00:00Z",
+      "closed_at": "2024-01-15T14:00:00Z"
+    },
+    {
+      "id": 6,
+      "title": "Marketing Campaign",
+      "lead_id": 6,
+      "value": 95000,
+      "stage": "negotiation",
+      "owner_id": 4,
+      "created_at": "2024-01-20T09:45:00Z",
+      "closed_at": null
+    },
+    {
+      "id": 7,
+      "title": "Data Analytics Platform",
+      "lead_id": null,
+      "value": 125000,
+      "stage": "proposal",
+      "owner_id": 5,
+      "created_at": "2024-01-21T13:15:00Z",
+      "closed_at": null
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "title": "Follow up with Ali Ahmed",
+      "description": "Call to discuss proposal details and answer questions about our services",
+      "assigned_to": 2,
+      "due_date": "2024-01-20T10:00:00Z",
+      "status": "pending",
+      "related_entity_type": "lead",
+      "related_entity_id": 1,
+      "created_at": "2024-01-15T10:30:00Z"
+    },
+    {
+      "id": 2,
+      "title": "Prepare contract for Maria Garcia",
+      "description": "Draft service agreement with terms and conditions",
+      "assigned_to": 1,
+      "due_date": "2024-01-19T16:00:00Z",
+      "status": "in_progress",
+      "related_entity_type": "deal",
+      "related_entity_id": 2,
+      "created_at": "2024-01-16T09:15:00Z"
+    },
+    {
+      "id": 3,
+      "title": "Send proposal to Lisa Brown",
+      "description": "Email SaaS proposal with pricing and features",
+      "assigned_to": 2,
+      "due_date": "2024-01-18T14:00:00Z",
+      "status": "pending",
+      "related_entity_type": "lead",
+      "related_entity_id": 4,
+      "created_at": "2024-01-18T08:20:00Z"
+    },
+    {
+      "id": 4,
+      "title": "Schedule demo with Robert Taylor",
+      "description": "Product demonstration call to showcase features",
+      "assigned_to": 1,
+      "due_date": "2024-01-21T11:00:00Z",
+      "status": "pending",
+      "related_entity_type": "lead",
+      "related_entity_id": 5,
+      "created_at": "2024-01-19T13:10:00Z"
+    },
+    {
+      "id": 5,
+      "title": "Review proposal for Custom Development",
+      "description": "Technical review of project scope and requirements",
+      "assigned_to": 3,
+      "due_date": "2024-01-22T15:00:00Z",
+      "status": "pending",
+      "related_entity_type": "deal",
+      "related_entity_id": 4,
+      "created_at": "2024-01-17T15:30:00Z"
+    },
+    {
+      "id": 6,
+      "title": "Update CRM records",
+      "description": "Clean up old data and update contact information",
+      "assigned_to": 2,
+      "due_date": "2024-01-20T17:00:00Z",
+      "status": "pending",
+      "related_entity_type": "system",
+      "related_entity_id": null,
+      "created_at": "2024-01-18T10:00:00Z"
+    },
+    {
+      "id": 7,
+      "title": "Call back potential client",
+      "description": "Return missed call from interested prospect",
+      "assigned_to": 1,
+      "due_date": "2024-01-19T12:00:00Z",
+      "status": "done",
+      "related_entity_type": "lead",
+      "related_entity_id": null,
+      "created_at": "2024-01-18T16:30:00Z"
+    },
+    {
+      "id": 8,
+      "title": "Prepare presentation for Emma Wilson",
+      "description": "Create sales presentation for upcoming meeting",
+      "assigned_to": 4,
+      "due_date": "2024-01-23T14:00:00Z",
+      "status": "pending",
+      "related_entity_type": "lead",
+      "related_entity_id": 6,
+      "created_at": "2024-01-21T14:30:00Z"
+    },
+    {
+      "id": 9,
+      "title": "Follow up on lost deal",
+      "description": "Contact James Anderson to understand why deal was lost",
+      "assigned_to": 5,
+      "due_date": "2024-01-24T10:00:00Z",
+      "status": "pending",
+      "related_entity_type": "lead",
+      "related_entity_id": 7,
+      "created_at": "2024-01-22T16:45:00Z"
+    }
+  ],
+  "activities": [
+    {
+      "id": 1,
+      "type": "lead_created",
+      "message": "New lead: Ali Ahmed from website",
+      "user_id": 2,
+      "entity_type": "lead",
+      "entity_id": 1,
+      "meta": {
+        "source": "website",
+        "value": 50000
+      },
+      "created_at": "2024-01-15T10:30:00Z"
+    },
+    {
+      "id": 2,
+      "type": "lead_updated",
+      "message": "Lead status updated: Maria Garcia → contacted",
+      "user_id": 1,
+      "entity_type": "lead",
+      "entity_id": 2,
+      "meta": {
+        "old_status": "new",
+        "new_status": "contacted"
+      },
+      "created_at": "2024-01-16T09:15:00Z"
+    },
+    {
+      "id": 3,
+      "type": "deal_closed",
+      "message": "Deal closed: Enterprise Software License for $120,000",
+      "user_id": 3,
+      "entity_type": "deal",
+      "entity_id": 1,
+      "meta": {
+        "value": 120000,
+        "stage": "closed_won"
+      },
+      "created_at": "2024-01-17T11:30:00Z"
+    },
+    {
+      "id": 4,
+      "type": "task_created",
+      "message": "Task created: Follow up with Ali Ahmed",
+      "user_id": 2,
+      "entity_type": "task",
+      "entity_id": 1,
+      "meta": {
+        "due_date": "2024-01-20T10:00:00Z",
+        "assigned_to": 2
+      },
+      "created_at": "2024-01-15T10:30:00Z"
+    },
+    {
+      "id": 5,
+      "type": "lead_created",
+      "message": "New lead: Lisa Brown from website",
+      "user_id": 4,
+      "entity_type": "lead",
+      "entity_id": 4,
+      "meta": {
+        "source": "website",
+        "value": 90000
+      },
+      "created_at": "2024-01-18T08:20:00Z"
+    },
+    {
+      "id": 6,
+      "type": "deal_created",
+      "message": "New deal: Consulting Services Package",
+      "user_id": 1,
+      "entity_type": "deal",
+      "entity_id": 2,
+      "meta": {
+        "value": 75000,
+        "stage": "negotiation"
+      },
+      "created_at": "2024-01-16T09:15:00Z"
+    },
+    {
+      "id": 7,
+      "type": "task_updated",
+      "message": "Task status updated: Prepare contract → in progress",
+      "user_id": 1,
+      "entity_type": "task",
+      "entity_id": 2,
+      "meta": {
+        "old_status": "pending",
+        "new_status": "in_progress"
+      },
+      "created_at": "2024-01-16T09:15:00Z"
+    },
+    {
+      "id": 8,
+      "type": "lead_created",
+      "message": "New lead: Robert Taylor from referral",
+      "user_id": 1,
+      "entity_type": "lead",
+      "entity_id": 5,
+      "meta": {
+        "source": "referral",
+        "value": 65000
+      },
+      "created_at": "2024-01-19T13:10:00Z"
+    },
+    {
+      "id": 9,
+      "type": "deal_created",
+      "message": "New deal: Custom Development Project",
+      "user_id": 1,
+      "entity_type": "deal",
+      "entity_id": 4,
+      "meta": {
+        "value": 180000,
+        "stage": "proposal"
+      },
+      "created_at": "2024-01-17T15:30:00Z"
+    },
+    {
+      "id": 10,
+      "type": "task_created",
+      "message": "Task created: Schedule demo with Robert Taylor",
+      "user_id": 1,
+      "entity_type": "task",
+      "entity_id": 4,
+      "meta": {
+        "due_date": "2024-01-21T11:00:00Z",
+        "assigned_to": 1
+      },
+      "created_at": "2024-01-19T13:10:00Z"
+    },
+    {
+      "id": 11,
+      "type": "lead_created",
+      "message": "New lead: Emma Wilson from website",
+      "user_id": 4,
+      "entity_type": "lead",
+      "entity_id": 6,
+      "meta": {
+        "source": "website",
+        "value": 85000
+      },
+      "created_at": "2024-01-20T09:45:00Z"
+    },
+    {
+      "id": 12,
+      "type": "lead_updated",
+      "message": "Lead status updated: Emma Wilson → contacted",
+      "user_id": 4,
+      "entity_type": "lead",
+      "entity_id": 6,
+      "meta": {
+        "old_status": "new",
+        "new_status": "contacted"
+      },
+      "created_at": "2024-01-21T14:30:00Z"
+    },
+    {
+      "id": 13,
+      "type": "deal_created",
+      "message": "New deal: Marketing Campaign",
+      "user_id": 4,
+      "entity_type": "deal",
+      "entity_id": 6,
+      "meta": {
+        "value": 95000,
+        "stage": "negotiation"
+      },
+      "created_at": "2024-01-20T09:45:00Z"
+    },
+    {
+      "id": 14,
+      "type": "lead_updated",
+      "message": "Lead status updated: James Anderson → lost",
+      "user_id": 5,
+      "entity_type": "lead",
+      "entity_id": 7,
+      "meta": {
+        "old_status": "contacted",
+        "new_status": "lost"
+      },
+      "created_at": "2024-01-22T16:45:00Z"
+    },
+    {
+      "id": 15,
+      "type": "task_completed",
+      "message": "Task completed: Call back potential client",
+      "user_id": 1,
+      "entity_type": "task",
+      "entity_id": 7,
+      "meta": {
+        "old_status": "pending",
+        "new_status": "done"
+      },
+      "created_at": "2024-01-19T12:00:00Z"
+    }
+  ]
+}

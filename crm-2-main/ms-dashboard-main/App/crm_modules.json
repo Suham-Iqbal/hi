@@ -1,0 +1,44 @@
+{
+  "modules": [
+    {
+      "id": "dashboard",
+      "name": "Dashboard",
+      "icon": "bi-speedometer2",
+      "subSections": [
+        { "id": "dashboard-main", "name": "Overview" },
+        { "id": "reports", "name": "Reports" },
+        { "id": "analytics", "name": "Analytics" }
+      ]
+    },
+    {
+      "id": "sales",
+      "name": "Sales",
+      "icon": "bi-cash-stack",
+      "subSections": [
+        { "id": "leads", "name": "Leads" },
+        { "id": "deals", "name": "Deals" },
+        { "id": "tasks", "name": "Tasks" }
+      ]
+    },
+    {
+      "id": "collaboration",
+      "name": "Collaboration",
+      "icon": "bi-people-fill",
+      "subSections": [
+        { "id": "general-chat", "name": "General Chat" },
+        { "id": "private-messages", "name": "Private Messages" }
+      ]
+    },
+    {
+      "id": "system",
+      "name": "System",
+      "icon": "bi-gear-fill",
+      "subSections": [
+        { "id": "activities", "name": "Activities" },
+        { "id": "notifications", "name": "Notifications" },
+        { "id": "calendar", "name": "Calendar" },
+        { "id": "file-manager", "name": "File Manager" }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .test-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .test-section {
+            margin-bottom: 30px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .test-section h3 {
+            margin-top: 0;
+            color: #333;
+        }
+        button {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+        .result {
+            margin-top: 10px;
+            padding: 10px;
+            background: #f8f9fa;
+            border-radius: 5px;
+            border-left: 4px solid #007bff;
+        }
+        .error {
+            border-left-color: #dc3545;
+            background: #f8d7da;
+        }
+        .success {
+            border-left-color: #28a745;
+            background: #d4edda;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1>Chat Functionality Test</h1>
+        
+        <div class="test-section">
+            <h3>1. Test Server Connection</h3>
+            <button onclick="testServerConnection()">Test Server</button>
+            <div id="serverResult" class="result"></div>
+        </div>
+
+        <div class="test-section">
+            <h3>2. Test Users API</h3>
+            <button onclick="testUsersAPI()">Get Users</button>
+            <div id="usersResult" class="result"></div>
+        </div>
+
+        <div class="test-section">
+            <h3>3. Test Private Chat API</h3>
+            <button onclick="testPrivateChatAPI()">Test Private Chat</button>
+            <div id="privateChatResult" class="result"></div>
+        </div>
+
+        <div class="test-section">
+            <h3>4. Test Send Message</h3>
+            <input type="text" id="testMessage" placeholder="Enter test message">
+            <button onclick="testSendMessage()">Send Test Message</button>
+            <div id="sendMessageResult" class="result"></div>
+        </div>
+
+        <div class="test-section">
+            <h3>5. Test General Chat API</h3>
+            <button onclick="testGeneralChatAPI()">Test General Chat</button>
+            <div id="generalChatResult" class="result"></div>
+        </div>
+    </div>
+
+    <script>
+        const API_BASE = 'http://localhost:3000/api';
+
+        function showResult(elementId, message, isError = false, isSuccess = false) {
+            const element = document.getElementById(elementId);
+            element.textContent = message;
+            element.className = 'result';
+            if (isError) element.classList.add('error');
+            if (isSuccess) element.classList.add('success');
+        }
+
+        async function testServerConnection() {
+            try {
+                const response = await fetch(`${API_BASE}/users`);
+                if (response.ok) {
+                    showResult('serverResult', '✅ Server is running and responding!', false, true);
+                } else {
+                    showResult('serverResult', `❌ Server responded with status: ${response.status}`, true);
+                }
+            } catch (error) {
+                showResult('serverResult', `❌ Server connection failed: ${error.message}`, true);
+            }
+        }
+
+        async function testUsersAPI() {
+            try {
+                const response = await fetch(`${API_BASE}/chat/users`);
+                const data = await response.json();
+                showResult('usersResult', `✅ Found ${data.users?.length || 0} users: ${JSON.stringify(data.users?.map(u => u.name || u.email))}`, false, true);
+            } catch (error) {
+                showResult('usersResult', `❌ Users API failed: ${error.message}`, true);
+            }
+        }
+
+        async function testPrivateChatAPI() {
+            try {
+                // Test with two users
+                const response = await fetch(`${API_BASE}/chat/private/qasim@gmail.com/ali@gmail.com`);
+                const data = await response.json();
+                showResult('privateChatResult', `✅ Private chat API working. Messages: ${data.length || 0}`, false, true);
+            } catch (error) {
+                showResult('privateChatResult', `❌ Private chat API failed: ${error.message}`, true);
+            }
+        }
+
+        async function testSendMessage() {
+            const message = document.getElementById('testMessage').value;
+            if (!message) {
+                showResult('sendMessageResult', '❌ Please enter a message first', true);
+                return;
+            }
+
+            try {
+                const response = await fetch(`${API_BASE}/chat/private`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        from: 'qasim@gmail.com',
+                        to: 'ali@gmail.com',
+                        message: message
+                    })
+                });
+                const data = await response.json();
+                showResult('sendMessageResult', `✅ Message sent successfully! Response: ${JSON.stringify(data)}`, false, true);
+            } catch (error) {
+                showResult('sendMessageResult', `❌ Send message failed: ${error.message}`, true);
+            }
+        }
+
+        async function testGeneralChatAPI() {
+            try {
+                const response = await fetch(`${API_BASE}/chat/general`);
+                const data = await response.json();
+                showResult('generalChatResult', `✅ General chat API working. Messages: ${data.length || 0}`, false, true);
+            } catch (error) {
+                showResult('generalChatResult', `❌ General chat API failed: ${error.message}`, true);
+            }
+        }
+
+        // Auto-test on load
+        window.addEventListener('load', () => {
+            setTimeout(testServerConnection, 1000);
+        });
+    </script>
+</body>
+</html>
